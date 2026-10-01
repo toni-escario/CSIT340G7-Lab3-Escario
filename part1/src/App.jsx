@@ -21,18 +21,20 @@ const Footer = (props) => (
 )
 
 const App = () => {
-  const course = 'Platform-based Development 3 (Mobile)'
-  const parts = [
-    { name: 'Networking 2', units: 3 },
-    { name: 'Object-oriented Programming 2', units: 3 },
-    { name: 'Human Computer Interaction', units: 3 },
-  ]
+  const course = {
+    name: 'Platform-based Development 3 (Mobile)',
+    parts: [
+      { name: 'Networking 2', units: 3 },
+      { name: 'Object-oriented Programming 2', units: 3 },
+      { name: 'Human Computer Interaction', units: 3 },
+    ],
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer name='Mary Antonetthe V. Escario' code='CSIT340' section='G7' />
     </div>
   )
