@@ -4,14 +4,16 @@ const Part = (props) => <p>{props.part.name} {props.part.units}</p>
 
 const Content = (props) => (
   <div>
-    <Part part={props.part1} />
-    <Part part={props.part2} />
-    <Part part={props.part3} />
+    <Part part={props.parts[0]} />
+    <Part part={props.parts[1]} />
+    <Part part={props.parts[2]} />
   </div>
 )
 
 const Total = (props) => (
-  <p>Total units: {props.part1.units + props.part2.units + props.part3.units}</p>
+  <p>
+    Total units: {props.parts[0].units + props.parts[1].units + props.parts[2].units}
+  </p>
 )
 
 const Footer = (props) => (
@@ -20,15 +22,17 @@ const Footer = (props) => (
 
 const App = () => {
   const course = 'Platform-based Development 3 (Mobile)'
-  const part1 = { name: 'Networking 2', units: 3 }
-  const part2 = { name: 'Object-oriented Programming 2', units: 3 }
-  const part3 = { name: 'Human Computer Interaction', units: 3 }
+  const parts = [
+    { name: 'Networking 2', units: 3 },
+    { name: 'Object-oriented Programming 2', units: 3 },
+    { name: 'Human Computer Interaction', units: 3 },
+  ]
 
   return (
     <div>
       <Header course={course} />
-      <Content part1={part1} part2={part2} part3={part3} />
-      <Total part1={part1} part2={part2} part3={part3} />
+      <Content parts={parts} />
+      <Total parts={parts} />
       <Footer name='Mary Antonetthe V. Escario' code='CSIT340' section='G7' />
     </div>
   )
